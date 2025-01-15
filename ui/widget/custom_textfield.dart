@@ -11,9 +11,18 @@ class CustomTextField  extends StatelessWidget{
   final TextInputType keyboardType;
   final bool isValid;
   final bool isEmpty;
-  const CustomTextField({super.key,required this.controller, required this.labelText, required this.hintText,
-    this.errorText, required this.onChanged, this.iconLeft, required this.keyboardType,
-    this.isValid= true, this.isEmpty = true});
+ const CustomTextField(
+      {super.key,
+      required this.controller,
+      required this.labelText,
+      required this.hintText,
+      this.errorText,
+      required this.onChanged,
+      this.iconLeft,
+      required this.keyboardType,
+      this.isValid = true,
+      this.isEmpty = true});
+
 
   @override
   Widget build(BuildContext context) {
