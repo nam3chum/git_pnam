@@ -1,6 +1,5 @@
 
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class CustomTextField  extends StatelessWidget{
   final TextEditingController controller;
@@ -12,9 +11,9 @@ class CustomTextField  extends StatelessWidget{
   final TextInputType keyboardType;
   final bool isValid;
   final bool isEmpty;
-  CustomTextField({super.key,required this.controller, required this.labelText, required this.hintText,
-      this.errorText, required this.onChanged, this.iconLeft, required this.keyboardType,
-      this.isValid= true, this.isEmpty = true});
+  const CustomTextField({super.key,required this.controller, required this.labelText, required this.hintText,
+    this.errorText, required this.onChanged, this.iconLeft, required this.keyboardType,
+    this.isValid= true, this.isEmpty = true});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,7 @@ class CustomTextField  extends StatelessWidget{
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),
-              borderSide: BorderSide(
+              borderSide: const BorderSide(
                 color: Colors.grey,
                 width: 1.0,
               ),
@@ -75,11 +74,13 @@ class CustomTextField  extends StatelessWidget{
   }
 }
 class TestCustomTextField extends StatefulWidget {
+  const TestCustomTextField({super.key});
+
   @override
-  _TestCustomTextFieldState createState() => _TestCustomTextFieldState();
+  TestCustomTextFieldState createState() => TestCustomTextFieldState();
 }
 
-class _TestCustomTextFieldState extends State<TestCustomTextField> {
+class TestCustomTextFieldState extends State<TestCustomTextField> {
   final TextEditingController _emailController = TextEditingController();
   bool isValid = false;
   bool isEmpty = true;
@@ -115,4 +116,9 @@ class _TestCustomTextFieldState extends State<TestCustomTextField> {
       ),
     );
   }
+}
+void main(){
+  runApp(const MaterialApp(
+    home: TestCustomTextField(),
+  ));
 }
