@@ -141,7 +141,7 @@ class CalendarPage extends StatefulWidget {
 }
 
 class CustomCalendarState extends State<CalendarPage> {
-  DateTime date = DateTime(2016, 9, 8);
+  DateTime date = DateTime.now();
   Map<DateTime, int> selectedDays = {};
   final weekDays = ["M", "T", "W", "T", "F", "S", "S"];
   late final PageController tableCalendarController;
